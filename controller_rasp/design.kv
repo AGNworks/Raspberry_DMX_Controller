@@ -1,0 +1,307 @@
+<ProgrammerScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            padding: 15,15
+            spacing: 20,20
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+            Label:
+                text: "User"
+            Button:
+                background_normal: 'turnoff.jpeg'
+                on_press: root.system_off()
+        GridLayout:
+            cols: 1
+            padding: 15,15
+            spacing: 20,20
+            TextInput:
+                id: username
+                hint_text: "Name"
+            TextInput:
+                id: password
+                hint_text: "Password"
+            GridLayout:
+                cols: 2
+                padding: 15,15
+                spacing: 20,20
+                Button:
+                    text: "Get out of here"
+                    on_press: root.check_user(root.ids.username.text, root.ids.password.text)
+                Button:
+                    text: "Back to the Control" 
+                    on_press: root.back_to_main()
+
+<MainScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            padding: 15,15
+            spacing: 20,20
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+            Label:
+                text: "DMX Controller v0.0"
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+        GridLayout:
+            cols: 2
+            padding: 20,20
+            spacing: 20,20
+            Button:
+                text: "Turn fully on all channels"
+                on_press: root.turn_all_on()
+            Button:
+                text: "Turn fully off all channels"
+                on_press: root.turn_all_off()
+        GridLayout:
+            cols: 4
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                background_down:'#660000'
+                background_color:'#f70000'
+                text: "RED channels"
+                on_press: root.turn_red()
+            Button:
+                background_down:'#00fc08'
+                background_color:'#006e03'
+                text: "GREEN channels"
+                on_press: root.turn_green()
+            Button:
+                background_down:'#0008fa'
+                background_color:'#00058f'
+                text: "BLUE channels"
+                on_press: root.turn_blue()
+            Button:
+                background_down:'#f0f0f0'
+                background_color:'#f0fcfc'
+                text: "WHITE channels"
+                on_press: root.turn_white()
+        GridLayout:
+            cols: 2
+            padding: 20,20
+            spacing: 20,20
+            Button:
+                text: "RGB"
+                on_press: root.turn_to_RGB()
+            Button:
+                text: "RGBW"
+                on_press: root.turn_to_RGBW()
+        GridLayout:
+            cols: 2
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                text: "Go to programming mode"
+                on_press: root.programming()
+            Button:
+                text: "More options"
+                on_press: root.more_options()
+
+<ControlScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            padding: 15,15
+            spacing: 20,20
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+            Label:
+                text: "Control By Feature"
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+        GridLayout:
+            cols: 2
+            padding: 20,20
+            spacing: 20,20
+            Button:
+                text: "RGB"
+                on_press: root.turn_to_RGB()
+            Button:
+                text: "RGBW"
+                on_press: root.turn_to_RGBW()
+        GridLayout:
+            cols: 4
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                background_down:'#660000'
+                background_color:'#f70000'
+                text: "RED channels"
+                on_press: root.turn_red()
+            Button:
+                background_down:'#00fc08'
+                background_color:'#006e03'
+                text: "GREEN channels"
+                on_press: root.turn_green()
+            Button:
+                background_down:'#0008fa'
+                background_color:'#00058f'
+                text: "BLUE channels"
+                on_press: root.turn_blue()
+            Button:
+                background_down:'#f0f0f0'
+                background_color:'#f0fcfc'
+                text: "WHITE channels"
+                on_press: root.turn_white()
+        GridLayout:
+            cols: 4 
+            padding: 20,20
+            spacing: 20,20
+            GridLayout:
+                cols: 2
+                padding: 15,15
+                spacing: 20,20
+                Button:
+                    text: "- 1"
+                    on_press: root.minus_one()
+                Button:
+                    text: "- 10"
+                    on_press: root.minus_ten()
+            Label:
+                id: labeldecoder
+                text: "1"
+            GridLayout:
+                cols: 2
+                padding: 15,15
+                spacing: 20,20
+                Button:
+                    text: "+ 1"
+                    on_press: root.plus_one()
+                Button:
+                    text: "+ 10"
+                    on_press: root.plus_ten()
+            Button:
+                text: "OFF"
+                on_press: root.turn_off()
+        GridLayout:
+            cols: 2
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                text: "Go to the main screen"
+                on_press: root.back_to_main()
+            Button:
+                text: "Channel"
+                on_press: root.setting()
+
+<ChannelScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            padding: 15,15
+            spacing: 20,20
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+            Label:
+                text: "Channel Screen"
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+        
+        GridLayout:
+            cols: 4 
+            padding: 20,20
+            spacing: 20,20
+            GridLayout:
+                cols: 2
+                padding: 15,15
+                spacing: 20,20
+                Button:
+                    text: "- 1"
+                    on_press: root.minus_one()
+                Button:
+                    text: "- 10"
+                    on_press: root.minus_ten()
+            Label:
+                id: labelchannel
+                text: "1"
+            GridLayout:
+                cols: 2
+                padding: 15,15
+                spacing: 20,20
+                Button:
+                    text: "+ 1"
+                    on_press: root.plus_one()
+                Button:
+                    text: "+ 10"
+                    on_press: root.plus_ten()
+        
+        Slider: 
+            id: slider
+            min: 0
+            max: 255
+            step: 1
+            orientation: 'horizontal'
+            on_touch_up: root.slider_move()
+                
+        GridLayout:
+            cols: 2
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                text: "Back to control"
+                on_press: root.back_to_control()
+            Button:
+                text: "Scenes"
+                on_press: root.scenes()
+
+
+
+<ScenesScreen>:
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 3
+            padding: 15,15
+            spacing: 20,20
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size 
+            Label:
+                text: "Scenes Screen"
+            Image:
+                source: 'NA.jpg'
+                size: self.texture_size
+                
+        GridLayout:
+            cols: 2
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                text: "Scene No1"
+                on_press: root.scene_one()
+            Button:
+                text: "STOP Scene"
+                on_press: root.stop_scene()
+                
+        GridLayout:
+            cols: 1
+            padding: 15,15
+            spacing: 20,20
+            Button:
+                text: "Back to channel"
+                on_press: root.back_to_channel()
+        
+<RootWidget>:
+    MainScreen:
+        name: "main_screen" 
+    ControlScreen:
+        name: "control_screen"
+    ChannelScreen:
+        name: "channel_screen"
+    ProgrammerScreen:
+        name: "programmer_screen"    
+    ScenesScreen:
+        name: "scenes_screen"
